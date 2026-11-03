@@ -1,0 +1,100 @@
+/* ---------- Общие настройки ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #66fff0;          /* бирюзовый фон */
+  color: #000;
+  font-family: "Nunito", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Центральная колонка: на ПК не шире 1200px */
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+/* ---------- Заголовки ---------- */
+h1 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 0 0 60px;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: 400;
+  margin: 0 0 30px;
+}
+
+p {
+  margin: 0 0 12px;
+}
+
+.intro {
+  margin-bottom: 90px;
+}
+
+.section {
+  margin-bottom: 90px;
+}
+
+/* ---------- Текст + картинка в одну строку (ПК) ---------- */
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.text {
+  flex: 1;                      /* текст занимает всё свободное место */
+}
+
+.row img {
+  width: 45%;                   /* картинка — 45% ширины */
+  height: auto;
+  display: block;
+}
+
+/* ---------- Планшеты и телефоны (экран уже 800px) ---------- */
+@media (max-width: 800px) {
+  .page {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  .intro,
+  .section {
+    margin-bottom: 50px;
+  }
+
+  /* Картинка уходит под текст */
+  .row {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .row img {
+    width: 100%;
+  }
+}
