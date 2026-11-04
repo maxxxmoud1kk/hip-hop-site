@@ -19,7 +19,7 @@ body {
   padding: 60px 40px;
 }
 
-/* ---------- Заголовки ---------- */
+/* ---------- Заголовки и текст ---------- */
 h1 {
   text-align: center;
   font-size: 48px;
@@ -38,12 +38,21 @@ p {
   margin: 0 0 12px;
 }
 
+a {
+  color: #000;
+}
+
 .intro {
   margin-bottom: 90px;
 }
 
 .section {
   margin-bottom: 90px;
+}
+
+/* Абзац под блоком «текст + картинка» */
+.after {
+  margin-top: 60px;
 }
 
 /* ---------- Текст + картинка в одну строку (ПК) ---------- */
@@ -63,8 +72,37 @@ p {
   display: block;
 }
 
+/* Блок, где картинка стоит слева, а текст справа */
+.row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* ---------- Галерея Chanel: три фото в ряд ---------- */
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.gallery img {
+  height: 480px;                /* одинаковая высота, ширина по пропорциям */
+  width: auto;
+  max-width: 100%;
+}
+
+.caption {
+  text-align: center;
+  font-style: italic;
+  margin-top: 20px;
+}
+
 /* ---------- Планшеты и телефоны (экран уже 800px) ---------- */
 @media (max-width: 800px) {
+  body {
+    font-size: 16px;
+  }
+
   .page {
     padding: 30px 20px;
   }
@@ -79,22 +117,35 @@ p {
     margin-bottom: 20px;
   }
 
-  body {
-    font-size: 16px;
-  }
-
   .intro,
   .section {
     margin-bottom: 50px;
   }
 
+  .after {
+    margin-top: 30px;
+  }
+
   /* Картинка уходит под текст */
-  .row {
+  .row,
+  .row.reverse {
     flex-direction: column;
     gap: 24px;
   }
 
   .row img {
     width: 100%;
+  }
+
+  /* Фото Chanel друг под другом */
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: auto;
   }
 }
