@@ -66,10 +66,26 @@ a {
   flex: 1;                      /* текст занимает всё свободное место */
 }
 
-.row img {
+.row > img {
   width: 45%;                   /* картинка — 45% ширины */
   height: auto;
   display: block;
+}
+
+/* Картинка с подписью */
+figure {
+  width: 45%;
+  margin: 0;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gap {
+  margin-top: 40px;
 }
 
 /* Блок, где картинка стоит слева, а текст справа */
@@ -133,19 +149,25 @@ a {
     gap: 24px;
   }
 
-  .row img {
+  .row > img,
+  figure {
     width: 100%;
   }
 
-  /* Фото Chanel друг под другом */
+  .gap {
+    margin-top: 20px;
+  }
+
+  /* Фото Chanel остаются в ряд, просто становятся меньше */
   .gallery {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    gap: 8px;
   }
 
   .gallery img {
-    width: 100%;
+    flex: 1;                    /* три фото делят ширину поровну */
+    min-width: 0;
     height: auto;
+    aspect-ratio: 2 / 3;        /* одинаковая высота у всех */
+    object-fit: cover;
   }
 }
